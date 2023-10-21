@@ -9,11 +9,18 @@ const publicDirectorPath = path.join(__dirname, "./public");
 console.log(publicDirectorPath)
 const port = 3000
 
-app.use(express.static(publicDirectorPath))
+// app.use(express.static(publicDirectorPath))
 
 // console.log(__dirname); // dirname is used to get path of the required folder which we want 
 // console.log(path.join(__dirname, "./public"));
 
+//to set the view 
+app.set('view engine', 'hbs');
+
+
+app.get("", (req,res) =>{
+    res.render("index");
+})
 
 app.get('/help', (req,res)=>{
     const filePath = path.join(publicDirectorPath, 'help.html');
