@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            /* New background color */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #3498db, #8e44ad);
+        }
+
+        .login-container {
+            background: linear-gradient(135deg, #3498db, #8e44ad);
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            color: #fff;
+            /* Text color */
+        }
+
+        .login-container h2 {
+            margin: 0 0 20px 0;
+            font-size: 24px;
+            /* Larger font size */
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            /* Slightly transparent background */
+            border-radius: 3px;
+            color: #fff;
+            /* Text color */
+        }
+
+        .login-container input[type="submit"] {
+            background-color: #8e44ad;
+            /* Aesthetic button color */
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-weight: bold;
+            /* Bold text */
+            transition: background-color 0.3s;
+            /* Smooth hover effect */
+        }
+
+        .login-container input[type="submit"]:hover {
+            background-color: #6c3483;
+            /* Darker color on hover */
+        }
+
+        .login-container {
+            color: black;
+            width: 350px
+        }
+
+        form {
+            width: 330px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="/login" method="post">
+            <input type="text" placeholder="Username" name="username" required>
+            <input type="password" placeholder="Password" name="password" required>
+            <input type="submit" value="Login">
+        </form>
+
+        <a href="/signup"> Make a new account </a>
+    </div>
+</body>
+
+</html>
