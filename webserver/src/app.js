@@ -3,6 +3,8 @@ const  express = require('express')
 const exp = require('constants')
 const app = express()
 
+//partials is basically like a component of react but its in node
+
 
 
 const publicDirectorPath = path.join(__dirname, "./public");
@@ -19,7 +21,9 @@ app.set('view engine', 'hbs');
 
 
 app.get("", (req,res) =>{
-    res.render("index");
+    res.render("index",{
+        name:"Amrut",
+    });
 })
 
 app.get('/help', (req,res)=>{
