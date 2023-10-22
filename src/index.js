@@ -4,7 +4,7 @@ const path = require("path");
 const hbs = require("hbs");
 
 const templatePath = path.join(__dirname, "../templates");
-const LogInCollection = require("./mongodb")
+const collection = require("./mongodb")
 
 app.use(express.json());
 app.set("view engine", "hbs");
@@ -32,7 +32,7 @@ app.post("/signup", async (req, res) => {
     try {
 
         console.log("Data to be inserted:", data);
-        const user = await LogInCollection.create(data);
+        const user = await collection.create(data);
         if (user) {
             console.log("Data inserted successfully:", user);
             res.render("home");
@@ -51,7 +51,7 @@ app.post("/login", async (req, res) => {
 
 
     try {
-        const check = await LogInCollection.findOne({ name: req.body.name })
+        const check = await collection.findOne({ name: req.body.name })
 
         if (check.password === req.body.password) {
             res.status(201).render("home", { naming: `${req.body.password}+${req.body.name}` })
